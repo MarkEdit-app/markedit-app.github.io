@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MarkEdit</title>
-  <meta name="description" content="MarkEdit is a free, open-source Markdown editor for macOS. Download the app, browse extensions and themes, and explore the documentation.">
+  <meta name="description" content="Meet MarkEdit, a free, open-source Markdown editor that feels at home on your Mac. Native, lightweight, private, and yours to customize.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="MarkEdit">
   <meta property="og:site_name" content="MarkEdit">
-  <meta property="og:description" content="A free, open-source Markdown editor for macOS.">
+  <meta property="og:description" content="Less app. More writing. A free, open-source Markdown editor that feels at home on your Mac.">
   <meta property="og:url" content="https://markedit-app.github.io/">
+  <meta property="og:image" content="https://markedit-app.github.io/assets/social.jpg">
+  <meta property="og:image:alt" content="MarkEdit's native Markdown editor in light and dark appearances.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://markedit-app.github.io/">
-  <link rel="icon" type="image/png" href="/extensions/favicons/favicon.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/icon.png">
+  <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -20,31 +25,162 @@
     "url": "https://markedit-app.github.io/"
   }
   </script>
-  <style>
-    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
-    body { margin: 0; }
-    main { max-width: 42rem; margin: 12vh auto; padding: 0 1.5rem; }
-    h1 { font-size: 3rem; margin-bottom: 1rem; }
-    p, li { font-size: 1.125rem; line-height: 1.7; }
-    ul { padding-left: 1.25rem; }
-    li { margin: 0.75rem 0; }
-    a { color: #0969da; text-underline-offset: 0.2em; }
-    a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-    @media (prefers-color-scheme: dark) { a { color: #79c0ff; } }
-  </style>
 </head>
 <body>
-  <main>
-    <h1>MarkEdit</h1>
-    <p>A free, open-source Markdown editor for macOS.</p>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="https://github.com/MarkEdit-app/MarkEdit/releases/latest">Download MarkEdit</a></li>
-        <li><a href="/extensions/">Browse MarkEdit extensions and themes</a></li>
-        <li><a href="https://github.com/MarkEdit-app/MarkEdit/wiki">Read the documentation</a></li>
-        <li><a href="https://github.com/MarkEdit-app/MarkEdit">View the source on GitHub</a></li>
-      </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="/" aria-label="MarkEdit home">
+      <img src="assets/icon.png" width="36" height="36" alt="">
+      <span>MarkEdit</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#features">The details</a>
+      <a href="/extensions/">Extensions</a>
+      <a class="nav-github" href="https://github.com/MarkEdit-app/MarkEdit">GitHub <span aria-hidden="true">&#8599;</span></a>
     </nav>
+    <a class="button button-small" href="https://github.com/MarkEdit-app/MarkEdit/releases/latest">Get MarkEdit <span aria-hidden="true">&#8595;</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-heading">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Markdown, made for Mac</p>
+      <h1 id="hero-heading"><span class="visually-hidden">MarkEdit. </span>Less app.<br><em>More writing.</em></h1>
+      <p class="hero-description">A little space for your next big idea. MarkEdit is a free,<br class="desktop-break"> open-source Markdown editor that feels right at home on your Mac.</p>
+      <div class="hero-actions">
+        <a class="button" href="https://github.com/MarkEdit-app/MarkEdit/releases/latest">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg>
+          Download for macOS
+        </a>
+        <a class="text-link" href="#features">Meet your new editor <span aria-hidden="true">&#8595;</span></a>
+      </div>
+      <p class="compatibility">macOS 26 or later <span aria-hidden="true">&middot;</span> <a href="https://github.com/MarkEdit-app/MarkEdit#installation">Older Mac?</a></p>
+
+      <figure class="hero-preview">
+        <a class="screenshot-link" href="assets/editor.webp" aria-label="View a full-size screenshot of the MarkEdit editor">
+          <img src="assets/editor.webp" srcset="assets/editor-small.webp 800w, assets/editor.webp 1600w" sizes="(max-width: 1120px) calc(100vw - 48px), 1072px" width="2560" height="1660" fetchpriority="high" alt="MarkEdit editing a Markdown document, with a table of contents in light mode and native Writing Tools in dark mode.">
+        </a>
+        <figcaption><span>A familiar Mac app. A fresh page.</span><a href="assets/editor.webp">Take a closer look <span aria-hidden="true">&#8599;</span></a></figcaption>
+      </figure>
+    </section>
+
+    <div class="facts wrap" aria-label="MarkEdit at a glance">
+      <div><strong>~4 MB</strong><span>Small by design</span></div>
+      <div><strong>100% free</strong><span>Open source, too</span></div>
+      <div><strong>Zero tracking</strong><span>Your words stay yours</span></div>
+    </div>
+
+    <section class="features wrap section-space" id="features" aria-labelledby="features-heading">
+      <div class="section-heading">
+        <p class="eyebrow">Intentionally simple</p>
+        <h2 id="features-heading">Everything you need.<br><span class="muted-heading">Nothing you don&rsquo;t.</span></h2>
+        <p>Like TextEdit, but dedicated to Markdown.<br>Thoughtful details, without a whole new workflow to learn.</p>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <span class="feature-number" aria-hidden="true">01 / NATIVE</span>
+          <h3>A good Mac citizen.</h3>
+          <p>Familiar windows, keyboard shortcuts, and the little things you expect. From force-touch word lookup to macOS Writing Tools, your editor belongs here.</p>
+        </article>
+        <article>
+          <span class="feature-number" aria-hidden="true">02 / CAPABLE</span>
+          <h3>Lightweight. Not light-duty.</h3>
+          <p>Multi-caret editing, code folding, and large files handled with ease. A small app with a capable editing engine, built on CodeMirror 6.</p>
+        </article>
+        <article>
+          <span class="feature-number" aria-hidden="true">03 / OPEN</span>
+          <h3>Plain text. Plain and simple.</h3>
+          <p>Standard Markdown, not a proprietary format. MarkEdit follows GitHub Flavored Markdown and collects no user data. Your documents are your business.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="personal-section" aria-labelledby="personal-heading">
+      <div class="wrap split-section">
+        <div class="section-copy">
+          <p class="eyebrow">A space that feels like you</p>
+          <h2 id="personal-heading">Your words.<br><em>Your way.</em></h2>
+          <p>A quiet light theme for the morning. Something darker for a late-night idea. Find your favorite colors, choose your font, and settle in.</p>
+          <a class="text-link" href="/extensions/#themes">Find your theme <span aria-hidden="true">&#8594;</span></a>
+          <div class="palette" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <figure class="feature-preview">
+          <a class="screenshot-link" href="assets/themes.webp" aria-label="View a full-size screenshot of MarkEdit themes">
+            <img src="assets/themes.webp" width="2560" height="1660" loading="lazy" decoding="async" alt="Two colorful dark themes in MarkEdit, showing document statistics and word completion.">
+          </a>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap split-section extensions-section" aria-labelledby="extensions-heading">
+      <figure class="extension-preview">
+        <a class="screenshot-link" href="assets/extensions.webp" aria-label="View a full-size screenshot of the extension manager">
+          <img src="assets/extensions.webp" width="1784" height="1384" loading="lazy" decoding="async" alt="MarkEdit's extension manager with Vim Keybindings, Wikilinks, and community themes ready to install.">
+        </a>
+      </figure>
+      <div class="section-copy">
+        <p class="eyebrow">Small at heart. Room to grow.</p>
+        <h2 id="extensions-heading">A little more,<br><em>when you want it.</em></h2>
+        <p>Add a preview pane, Vim keybindings, or a favorite theme. Discover extensions in the app, and make MarkEdit fit the way you work.</p>
+        <a class="text-link" href="/extensions/">Explore extensions <span aria-hidden="true">&#8594;</span></a>
+        <ul class="extension-tags" aria-label="Featured extensions">
+          <li><a href="/extensions/#markedit-preview">Live preview</a></li>
+          <li><a href="/extensions/#markedit-vim">Vim keybindings</a></li>
+          <li><a href="/extensions/#markedit-interactive-tables">Visual tables</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="open-section wrap" aria-labelledby="open-heading">
+      <div>
+        <p class="eyebrow">Made with care. Shared freely.</p>
+        <h2 id="open-heading">Good tools are<br>better when shared.</h2>
+      </div>
+      <div class="open-copy">
+        <p>MarkEdit is a tool we use every day and keep improving for ourselves. We share it openly, hoping it makes a little room for your ideas, too.</p>
+        <a class="text-link" href="https://github.com/MarkEdit-app/MarkEdit">Meet the project on GitHub <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </section>
+
+    <section class="faq wrap section-space" aria-labelledby="faq-heading">
+      <div class="section-heading">
+        <p class="eyebrow">A few good questions</p>
+        <h2 id="faq-heading">Before your first draft.</h2>
+      </div>
+      <div class="questions">
+        <details>
+          <summary>Is MarkEdit really free?<span aria-hidden="true">+</span></summary>
+          <p>Yes. MarkEdit is free and open source, released under the MIT License. There is no paid tier to unlock. You can read the code, report a bug, or contribute on <a href="https://github.com/MarkEdit-app/MarkEdit">GitHub</a>.</p>
+        </details>
+        <details>
+          <summary>Will it work on my Mac?<span aria-hidden="true">+</span></summary>
+          <p>The current release requires macOS 26 or later. For Macs running macOS 12 through 15, you can find compatible releases in the <a href="https://github.com/MarkEdit-app/MarkEdit#installation">installation guide</a>.</p>
+        </details>
+        <details>
+          <summary>Can I preview my Markdown?<span aria-hidden="true">+</span></summary>
+          <p>Absolutely. Install the optional <a href="/extensions/#markedit-preview">Preview extension</a> for a live preview pane. The core app stays focused on editing; you choose the extras.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="download-section wrap" aria-labelledby="download-heading">
+      <img class="download-icon" src="assets/icon.png" width="80" height="80" loading="lazy" alt="">
+      <p class="eyebrow">Your next idea starts here</p>
+      <h2 id="download-heading">Open a page.<br><em>See where it takes you.</em></h2>
+      <a class="button" href="https://github.com/MarkEdit-app/MarkEdit/releases/latest">Get MarkEdit for Mac <span aria-hidden="true">&#8595;</span></a>
+      <p class="compatibility">Free and open source. Just download and write.</p>
+      <p class="homebrew">Prefer Homebrew? <code>brew install --cask markedit</code></p>
+    </section>
   </main>
+
+  <footer class="site-footer wrap">
+    <div><a class="brand" href="/"><img src="assets/icon.png" width="28" height="28" alt=""><span>MarkEdit</span></a><p>A little app for the things you want to say.</p></div>
+    <nav aria-label="Footer navigation">
+      <a href="https://github.com/MarkEdit-app/MarkEdit/wiki/Manual">Documentation</a>
+      <a href="https://github.com/MarkEdit-app/MarkEdit/wiki/Privacy-Policy">Privacy</a>
+      <a href="https://github.com/MarkEdit-app/MarkEdit">GitHub</a>
+      <a href="https://mastodon.social/@MarkEditApp" rel="me">Mastodon</a>
+    </nav>
+    <p class="footer-note">Made for Mac. Open to everyone.</p>
+  </footer>
 </body>
 </html>
