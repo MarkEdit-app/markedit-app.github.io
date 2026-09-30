@@ -54,14 +54,37 @@ test('content remains usable without JavaScript', () => {
     assert.match(image, /\bheight="\d+"/);
   }
   assert.equal([...html.matchAll(/<details>/g)].length, 3);
-  assert.equal([...html.matchAll(/<script\b/g)].length, 1);
+  assert.match(html, /<script src="faq\.js" defer><\/script>/);
   assert.match(css, /prefers-color-scheme: dark/);
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(css, /:focus-visible/);
 });
 
-test('all images together stay below 600 KiB', () => {
+test('screenshots retain their original PNG resolution without WebP alternatives', () => {
+  for (const [file, width, height] of [
+    ['editor.png', 2560, 1660],
+    ['themes.png', 2560, 1660],
+    ['extensions.png', 1784, 1384],
+  ]) {
+    const png = readFileSync(join(root, 'assets', file));
+    assert.equal(png.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+    assert.equal(png.readUInt32BE(16), width);
+    assert.equal(png.readUInt32BE(20), height);
+    assert.ok(html.includes(`src="assets/${file}"`));
+  }
+  assert.doesNotMatch(html, /\.webp|srcset=/);
+  assert.ok(readdirSync(join(root, 'assets')).every(file => !file.endsWith('.webp')));
+});
+
+test('typography uses native system families', () => {
+  assert.match(css, /--font-sans: system-ui,/);
+  assert.match(css, /--font-serif: ui-serif, serif/);
+  assert.match(css, /--font-mono: ui-monospace, monospace/);
+  assert.doesNotMatch(css, /Georgia|Times New Roman|Consolas|@font-face|@import/);
+});
+
+test('original PNG assets stay below 5 MiB in total', () => {
   const bytes = readdirSync(join(root, 'assets'))
     .reduce((sum, file) => sum + statSync(join(root, 'assets', file)).size, 0);
-  assert.ok(bytes < 600 * 1024, `Image payload is ${bytes} bytes`);
+  assert.ok(bytes < 5 * 1024 * 1024, `Image payload is ${bytes} bytes`);
 });

@@ -1,10 +1,10 @@
-App icon and screenshots are adapted from MarkEdit:
+App icon and screenshots come from MarkEdit:
 https://github.com/MarkEdit-app/MarkEdit
 
-editor.webp, editor-small.webp, social.jpg: Screenshots/01.png
-themes.webp: Screenshots/02.png
-extensions.webp: Screenshots/extensions.png
-icon.png, favicon.png: Icon.png
+editor.png: Screenshots/01.png (original, unmodified PNG)
+themes.png: Screenshots/02.png (original, unmodified PNG)
+extensions.png: Screenshots/extensions.png (original, unmodified PNG)
+icon.png, favicon.png: Icon.png (resized PNG)
 
 Copyright (c) 2023 MarkEdit.app. Distributed under the MIT License;
 see the LICENSE file at the root of this repository.
