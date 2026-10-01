@@ -60,6 +60,16 @@ test('content remains usable without JavaScript', () => {
   assert.match(css, /:focus-visible/);
 });
 
+test('FAQ explains preview and syntax-hidden editing through View Modes', () => {
+  const faq = html.match(/<section class="faq\b[\s\S]*?<\/section>/)?.[0];
+  assert.ok(faq);
+  assert.match(faq, /Can I preview Markdown or hide its syntax\?/);
+  assert.match(faq, /href="\/extensions\/#markedit-preview">View Modes extension<\/a>/);
+  assert.match(faq, /Markdown source editing, side-by-side or overlay previews/);
+  assert.match(faq, /Mixed mode, which hides Markdown syntax while you edit/);
+  assert.match(faq, /Extensions &gt; View Mode/);
+});
+
 test('screenshots retain their original PNG resolution without WebP alternatives', () => {
   for (const [file, width, height] of [
     ['editor.png', 2560, 1660],
