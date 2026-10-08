@@ -81,9 +81,22 @@ test('screenshots retain their original PNG resolution without WebP alternatives
     assert.equal(png.readUInt32BE(16), width);
     assert.equal(png.readUInt32BE(20), height);
     assert.ok(html.includes(`src="assets/${file}"`));
+    const image = [...html.matchAll(/<img\b[^>]*>/g)]
+      .map(([tag]) => tag).find(tag => tag.includes(`src="assets/${file}"`));
+    assert.match(image, new RegExp(`\\bwidth="${width}"`));
+    assert.match(image, new RegExp(`\\bheight="${height}"`));
   }
   assert.doesNotMatch(html, /\.webp|srcset=/);
   assert.ok(readdirSync(join(root, 'assets')).every(file => !file.endsWith('.webp')));
+});
+
+test('homepage reflects the refreshed product highlights and screenshots', () => {
+  assert.match(html, /Shortcuts and AppleScript support/);
+  assert.match(html, /edits million-line files with ease/);
+  assert.match(html, /curated extensions in the built-in extension manager/);
+  assert.match(html, /Preview Markdown, hide syntax, customize themes, write with AI, or edit tables visually/);
+  assert.match(html, /alt="[^"]*syntax-hidden Mixed mode and the View Modes menu[^"]*"/);
+  assert.match(html, /alt="[^"]*Markdown View Modes, Interactive Tables, Vim Keybindings[^"]*"/);
 });
 
 test('typography uses native system families', () => {
